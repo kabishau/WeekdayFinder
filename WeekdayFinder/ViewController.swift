@@ -7,7 +7,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
-    @IBAction func findDay(_ sender: UIButton) {
+    @IBAction func findWeekDay(_ sender: UIButton) {
         
     }
     
