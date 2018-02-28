@@ -10,15 +10,19 @@ class ViewController: UIViewController {
     @IBAction func findWeekDay(_ sender: UIButton) {
         let calendar = Calendar.current
         var dateComponents = DateComponents()
-        dateComponents.day = Int(dateTextField.text!)
-        dateComponents.month = Int(monthTextField.text!)
-        dateComponents.year = Int(yearTextField.text!)
         
-        let date = calendar.date(from: dateComponents)
+        guard let day = dateTextField.text, let month = monthTextField.text, let year = yearTextField.text else { return }
+        
+        dateComponents.day = Int(day)
+        dateComponents.month = Int(month)
+        dateComponents.year = Int(year)
+        
+        guard let date = calendar.date(from: dateComponents) else { return }
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         
-        let weekday = dateFormatter.string(from: date!)
+        let weekday = dateFormatter.string(from: date)
         
         resultLabel.text = weekday
     }
