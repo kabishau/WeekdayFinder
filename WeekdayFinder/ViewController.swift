@@ -15,6 +15,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    // method hides keyboard when user makes a touch view anywhere
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
 
